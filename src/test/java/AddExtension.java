@@ -12,12 +12,13 @@ public class AddExtension {
     @Test
     public void addExtension(){
 
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://www.google.com/");
         File Location = new File("/Users/praveen/Downloads/SelectorsHub.crx");
         ChromeOptions options = new ChromeOptions();
         options.addExtensions(Location);
-       // driver.quit();
+        driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        driver.get("https://www.google.com/");
+
+        driver.quit();
     }
 }
