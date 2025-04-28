@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="GroupTest_Suite">
+    <test name="Group_Test_Cases" verbose="2">
+        <groups>
+            <run>
+                <exclude name="S"/>
+                <include name="R"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="TestNG.TestGrouping"/>
+        </classes>
+    </test>
+</suite>
