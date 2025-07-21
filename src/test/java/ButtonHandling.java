@@ -36,7 +36,7 @@ public class ButtonHandling {
             System.out.println("Title Did not Matched");
         }
 */
-        Assert.assertEquals(ActualTitle, ExpectedTitle, "Title Matched");
+        Assert.assertEquals(ActualTitle, ExpectedTitle, "Title Doesn't Matched");
 
         driver.navigate().back();
 

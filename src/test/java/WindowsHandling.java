@@ -19,10 +19,12 @@ public class WindowsHandling {
     }
 
     @Test
-    public void WindowsHandle() {
+    public void WindowsHandle() throws InterruptedException {
 
         String parentWindow = driver.getWindowHandle();
         System.out.println(parentWindow);
+
+        Thread.sleep(5000);
 
         driver.findElement(By.id("j_idt88:new")).click();
 
@@ -34,6 +36,8 @@ public class WindowsHandling {
             System.out.println(driver.getTitle());
         }
 
+        Thread.sleep(5000);
+
         driver.close();
 
         driver.switchTo().window(parentWindow);
@@ -41,12 +45,16 @@ public class WindowsHandling {
         boolean element = driver.findElement(By.id("j_idt88:new")).isDisplayed();
         System.out.println(element);
 
+        Thread.sleep(5000);
+
         // Calculate number of windows
 
         driver.findElement(By.id("j_idt88:j_idt91")).click();
 
         Set<String> windows = driver.getWindowHandles();
         System.out.println(windows.size());
+
+        Thread.sleep(5000);
 
         // Close all the windows except parent window
 
@@ -61,6 +69,8 @@ public class WindowsHandling {
                 driver.close();
             }
         }
+
+        Thread.sleep(5000);
 
         driver.quit();
 

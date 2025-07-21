@@ -11,7 +11,7 @@ public class TestGrouping {
         System.out.println("This is a smoke and regression test case");
     }
 
-    @Test(groups = {"R"})
+    @Test(groups = {"R"}, enabled = false)
     public void test2() {
         System.out.println("This ia a regression test case");
     }
@@ -26,7 +26,7 @@ public class TestGrouping {
         System.out.println("This is a smoke test case");
     }
 
-    @Test(groups = {"S", "R"})
+    @Test(groups = {"S"})
     public void test5() {
         System.out.println("This is a regression and smoke test case");
     }

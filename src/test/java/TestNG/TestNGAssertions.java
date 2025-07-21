@@ -15,7 +15,7 @@ public class TestNGAssertions {
 //
 //        String expectedName = "Praveen";
 //        System.out.println("Before Assertion");
-//        Assert.assertEquals(actualName, expectedName, "Names are equal");
+//        Assert.assertEquals(actualName, expectedName, "Names aren't equal");
 //        System.out.println("After Assertion");
 //    }
 //
@@ -24,7 +24,7 @@ public class TestNGAssertions {
 //
 //        String expectedName = "Kumar";
 //        System.out.println("Before Assertion");
-//        Assert.assertNotEquals(actualName, expectedName, "Names are not equal");
+//        Assert.assertNotEquals(actualName, expectedName, "Names are equal");
 //        System.out.println("After Assertion");
 //    }
 //
@@ -72,8 +72,10 @@ public class TestNGAssertions {
     public void trueCheck() {
 
         System.out.println("Before Assertion");
-        SF.assertTrue(actualName.startsWith("P"), "This is a true statement");
+        SF.assertTrue(actualName.startsWith("M"), "This is a false statement");
         System.out.println("After Assertion");
+        SF.assertAll();
+
     }
 
     @Test(priority = 3)

@@ -36,11 +36,13 @@ public class Screenshot {
         FileHandler.copy(source, destination);
 
 
+
         // Method 2 - Take Specific Element Screenshot
         WebElement section = driver.findElement(By.xpath("//*[@id=\"j_idt88\"]/div/div[1]/div[1]"));
         File source_1 = section.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
         File destination_1 = new File("//Users//praveen//Documents//IntelliJ//Selenium_Automation//Screenshots//Screenshot_1.png");
         FileUtils.copyFile(source_1, destination_1);
+
 
         // Method 3 - Take a entire page screenshot
 

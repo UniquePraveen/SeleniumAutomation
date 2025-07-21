@@ -59,6 +59,7 @@ public class KeyBoardActions {
                         .keyUp(Keys.SHIFT)
                         .perform();
 
+
         Thread.sleep(5000);
 
         action .keyDown(Keys.COMMAND)
