@@ -16,7 +16,7 @@ public class TestGrouping {
         System.out.println("This ia a regression test case");
     }
 
-    @Test
+    @Test(groups = {"R"})
     public void test3() {
         System.out.println("This is not a regression or smoke test case");
     }

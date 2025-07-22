@@ -1,5 +1,6 @@
 package TestNG;
 
+import jdk.dynalink.beans.StaticClass;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -47,7 +48,7 @@ public class TestNGAssertions {
 
     // Soft Assertions
 
-    SoftAssert SF = new SoftAssert();
+   SoftAssert SF = new SoftAssert();
 
     @Test(priority = 0)
     public void valuesEqualCheck() {
@@ -57,15 +58,18 @@ public class TestNGAssertions {
         SF.assertEquals(actualName, expectedName, "Names are equal");
         System.out.println("After Assertion");
         SF.assertAll();
+
     }
 
     @Test(priority = 1)
     public void valuesNotEqualCheck() {
 
-        String expectedName = "Kumar";
+        String expectedName = "Praveen";
         System.out.println("Before Assertion");
         SF.assertNotEquals(actualName, expectedName, "Names are not equal");
         System.out.println("After Assertion");
+        SF.assertAll();
+
     }
 
     @Test(priority = 2)
@@ -84,6 +88,8 @@ public class TestNGAssertions {
         System.out.println("Before Assertion");
         SF.assertFalse(actualName.isBlank(), "This is a false statement");
         System.out.println("After Assertion");
+
     }
+
 
 }

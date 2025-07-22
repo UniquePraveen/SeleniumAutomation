@@ -33,15 +33,20 @@ public class AlertHandling {
         System.out.println(alert.getText());
         alert.accept();
 
-
-
         // Prompt Alert
-
         WebElement Button3 = driver.findElement(By.id("j_idt88:j_idt104"));
         Button3.click();
         Thread.sleep(5000);
         Alert alert2 = driver.switchTo().alert();
         alert2.sendKeys("I'm Praveen");
+
+//        // Sweet Alert
+//        WebElement Button4 = driver.findElement(By.xpath("//span[@class = \"ui-button-icon-left ui-icon ui-c pi pi-trash\"]"));
+//        Button4.click();
+//        Alert alert3 = driver.switchTo().alert();
+//        driver.findElement(By.id("j_idt88:j_idt108")).click();
+
+
 
         Thread.sleep(5000);
 
