@@ -15,7 +15,7 @@ public class UploadDownloadFunctions {
 
     WebDriver driver;
 
-    new ChromeDriver();
+
 
     @BeforeMethod
     public void getURL() {
