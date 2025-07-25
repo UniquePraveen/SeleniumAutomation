@@ -1,5 +1,7 @@
 package TestNG;
 
+import org.apache.cassandra.streaming.StreamOut;
+import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
 public class TestGrouping {
@@ -29,6 +31,12 @@ public class TestGrouping {
     @Test(groups = {"S"})
     public void test5() {
         System.out.println("This is a regression and smoke test case");
+    }
+
+    @Test(groups = "R")
+    public void test6() {
+
+        System.out.println("This is a regression test case");
     }
 
 

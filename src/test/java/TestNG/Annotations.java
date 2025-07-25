@@ -27,7 +27,6 @@ public class Annotations {
     public void afterSuite() {
 
         System.out.println("After Suite");
-
     }
 
     @BeforeMethod
@@ -55,6 +54,16 @@ public class Annotations {
 
         System.out.println("After Class");
 
+    }
+
+    @BeforeTest
+    public void beforeTest() {
+        System.out.println("Before Test");
+    }
+
+    @AfterTest
+    public void afterTest() {
+        System.out.println("After Test");
     }
 
 
