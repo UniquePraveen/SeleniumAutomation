@@ -28,29 +28,39 @@ public class Screenshot {
     @Test
     public void takeScreenshot() throws IOException, AWTException, InterruptedException {
 
-        // Method 1 - Take Full Screen Screenshot
+        // Take screenshot Interface and type-casting used for get screenshot.
         TakesScreenshot ts = (TakesScreenshot) driver;
-        File source = ts.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
-        File destination = new File("//Users//admin//IdeaProjects//SeleniumAutomation//Screenshots//Screenshot_1.png");
-        FileHandler.copy(source, destination);
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        File destination = new File("//Users//praveen//Documents//IntelliJ//Selenium_Automation//Screenshots//Screenshot_6.png");
+        FileUtils.copyFile(source, destination);
 
 
 
-        // Method 2 - Take Specific Element Screenshot
-        WebElement section = driver.findElement(By.xpath("//*[@id=\"j_idt88\"]/div/div[1]/div[1]"));
-        File source_1 = section.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
-        File destination_1 = new File("//Users//admin//IdeaProjects//SeleniumAutomation//Screenshots//Screenshot_2.png");
-        FileUtils.copyFile(source_1, destination_1);
-
+//        // Method 1 - Take Full Screen Screenshot
+//        TakesScreenshot ts = (TakesScreenshot) driver;
+//        File source = ts.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
+//        File destination = new File("//Users//admin//IdeaProjects//SeleniumAutomation//Screenshots//Screenshot_1.png");
+//        FileHandler.copy(source, destination);
+//
+//
+//
+//
+//
+//        // Method 2 - Take Specific Element Screenshot
+//        WebElement section = driver.findElement(By.xpath("//*[@id=\"j_idt88\"]/div/div[1]/div[1]"));
+//        File source_1 = section.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
+//        File destination_1 = new File("//Users//admin//IdeaProjects//SeleniumAutomation//Screenshots//Screenshot_2.png");
+//        FileUtils.copyFile(source_1, destination_1);
+//
 
         // Method 3 - Take a entire page screenshot
 
-        Robot robot = new Robot();
-        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-        Rectangle rectangle = new Rectangle(screen);
-        BufferedImage image = robot.createScreenCapture(rectangle);
-        File outputfile = new File("//Users//admin//IdeaProjects//SeleniumAutomation//Screenshots//Screenshot_3.png");
-        ImageIO.write(image, "png", outputfile);
+//        Robot robot = new Robot();
+//        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+//        Rectangle rectangle = new Rectangle(screen);
+//        BufferedImage image = robot.createScreenCapture(rectangle);
+//        File outputfile = new File("//Users//admin//IdeaProjects//SeleniumAutomation//Screenshots//Screenshot_3.png");
+//        ImageIO.write(image, "png", outputfile);
 
         Thread.sleep(4000);
         driver.quit();
