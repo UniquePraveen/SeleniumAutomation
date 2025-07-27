@@ -18,23 +18,23 @@ public class Listeners implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
 
-        System.out.println("Test Case Started");
+        System.out.println("Test Started");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println("Test Case Failed");
+        System.out.println("Test Failed");
 
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        System.out.println("Test Case Skipped");
+        System.out.println("Test Skipped");
     }
 
     @Override
     public void onTestFailedWithTimeout(ITestResult result) {
-        System.out.println("Test Case Failed With Timeout");
+        System.out.println("Test Failed With Timeout");
     }
 
     @Override

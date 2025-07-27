@@ -7,9 +7,10 @@ public class ArithmeticOperatorDataProvider {
 
     @Test(dataProvider = "data", dataProviderClass = DataProvider_1.class)
     public static int addSum(int a, int b) {
-
         return a + b;
     }
+
+
 
 
 }

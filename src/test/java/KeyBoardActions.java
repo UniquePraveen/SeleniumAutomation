@@ -6,12 +6,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import simpleCalculatorTest.ArithmeticOperatorDataProvider;
 
 import java.util.List;
 
 public class KeyBoardActions {
 
-    WebDriver driver;
+    static WebDriver driver;
 
     @BeforeMethod
     public void getURL() {
@@ -21,7 +22,7 @@ public class KeyBoardActions {
     }
 
     @Test
-    public void KeyBoardAction() throws InterruptedException {
+    public static void KeyBoardAction() throws InterruptedException {
 
         driver.get("https://www.leafground.com/list.xhtml");
 
@@ -46,7 +47,7 @@ public class KeyBoardActions {
     }
 
     @Test
-    public void googleSearch() throws InterruptedException {
+    public static void googleSearch() throws InterruptedException {
 
         // Type in Block Letter and select and CUT
         driver.get("https://www.google.com/");
@@ -71,6 +72,7 @@ public class KeyBoardActions {
                         .perform();
 
         Thread.sleep(3000);
+
 
         driver.quit();
     }

@@ -13,7 +13,6 @@ public class TestListeners {
     @Test
     public void test_01() {
         System.out.println("Test Case 1");
-
     }
 
     @Test(timeOut = 1000)
@@ -22,7 +21,7 @@ public class TestListeners {
         System.out.println("Test Case 2");
     }
 
-    @Test(dependsOnMethods = {"test_01"})
+    @Test(dependsOnMethods = {"test_02"})
     public void test_03() {
         System.out.println("Test Case 3");
     }

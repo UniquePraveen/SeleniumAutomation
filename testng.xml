@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="classes" thread-count = "2">
-    <test verbose="2" preserve-order="true" name="/Users/praveen/Downloads/microservices-assignment/SeleniumAutomation">
+<suite name="All Test Suite" parallel="classes" thread-count="2">
+    <!--    <test verbose="2" preserve-order="true" name="/Users/praveen/Downloads/microservices-assignment/SeleniumAutomation">-->
+    <!--        <classes>-->
+    <!--            <class name="GoogleTest"/>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+
+    <test name="Parallel_Tests">
         <classes>
             <class name="TestNG.ParallelTesting.MethodParellel"/>
-            <class name="GoogleTest"/>
+        </classes>
+    </test>
+
+    <test name="Parellel_Class">
+        <classes>
+            <class name="TextBoxHandling"></class>
+            <class name="GoogleTest"></class>
+            <class name="MouseActions"></class>
         </classes>
     </test>
 </suite>

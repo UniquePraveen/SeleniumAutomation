@@ -2,15 +2,18 @@ package TestNG.DataProvider;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import simpleCalculatorTest.ArithmeticOperatorDataProvider;
+
 
 public class DataProvider_1 {
 
     @Test(dataProvider = "data")
     public void addSum(int a, int b, int expected) {
-        Assert.assertEquals(ArithmeticOperatorDataProvider.addSum(a, b), expected,"Failed to Calculate the SUM");
+        Assert.assertEquals(ArithmeticOperatorDataProvider.addSum(a, b), expected, "Failed to Calculate the SUM");
         System.out.println(ArithmeticOperatorDataProvider.addSum(a, b));
+
     }
 
     @DataProvider(name = "data")
@@ -26,8 +29,6 @@ public class DataProvider_1 {
 
 
     }
-
-
 
 
 }

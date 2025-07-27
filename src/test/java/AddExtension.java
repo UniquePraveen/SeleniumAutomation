@@ -7,10 +7,10 @@ import java.io.File;
 
 public class AddExtension {
 
-    WebDriver driver;
+   static  WebDriver driver;
 
     @Test
-    public void addExtension(){
+    public static void addExtension(){
 
       File location = new File("/Users/admin/Downloads/SelectorsHub-Chrome-Web-Store.crx");
       ChromeOptions options = new ChromeOptions();
