@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="parellelTesting" parent-module="classes" thread-count="10">
+    <test name="Parelleltesting">
+        <classes>
+            <class name="TextBoxHandling"/>
+            <class name="DynamicDropDownHandling"/>
+            <class name="GoogleTest"/>
+        </classes>
+
+    </test>
+</suite>

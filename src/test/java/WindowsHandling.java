@@ -20,59 +20,88 @@ public class WindowsHandling {
 
     @Test
     public void WindowsHandle() throws InterruptedException {
+//
+//        String parentWindow = driver.getWindowHandle();
+//        System.out.println(parentWindow);
+//
+//        Thread.sleep(5000);
+//
+//        driver.findElement(By.id("j_idt88:new")).click();
+//
+//        Set<String> windowsHandles = driver.getWindowHandles();
+//
+//        for (String windowHandle : windowsHandles) {
+//            System.out.println(windowHandle);
+//            driver.switchTo().window(windowHandle);
+//            System.out.println(driver.getTitle());
+//        }
+//
+//        Thread.sleep(5000);
+//
+//        driver.close();
+//
+//        driver.switchTo().window(parentWindow);
+//
+//        boolean element = driver.findElement(By.id("j_idt88:new")).isDisplayed();
+//        System.out.println(element);
+//
+//        Thread.sleep(5000);
+//
+//        // Calculate number of windows
+//
+//        driver.findElement(By.id("j_idt88:j_idt91")).click();
+//
+//        Set<String> windows = driver.getWindowHandles();
+//        System.out.println(windows.size());
+//
+//        Thread.sleep(5000);
+//
+//        // Close all the windows except parent window
+//
+//        driver.findElement(By.id("j_idt88:j_idt93")).click();
+//        Set<String> windows2 = driver.getWindowHandles();
+//
+//        System.out.println(windows2.size());
+//
+//        for (String windowHandle : windows2) {
+//            if (!(windowHandle.equals(parentWindow))) {
+//                driver.switchTo().window(windowHandle);
+//                driver.close();
+//            }
+//        }
+//
+//        Thread.sleep(5000);
+//
+//        driver.quit();
 
         String parentWindow = driver.getWindowHandle();
         System.out.println(parentWindow);
 
-        Thread.sleep(5000);
-
-        driver.findElement(By.id("j_idt88:new")).click();
-
-        Set<String> windowsHandles = driver.getWindowHandles();
-
-        for (String windowHandle : windowsHandles) {
-            System.out.println(windowHandle);
-            driver.switchTo().window(windowHandle);
-            System.out.println(driver.getTitle());
-        }
+        driver.findElement(By.xpath("//span[normalize-space()='Open']")).click();
 
         Thread.sleep(5000);
 
-        driver.close();
+        String childWindow = driver.getWindowHandle();
+        System.out.println(childWindow);
+
+
 
         driver.switchTo().window(parentWindow);
 
-        boolean element = driver.findElement(By.id("j_idt88:new")).isDisplayed();
-        System.out.println(element);
 
-        Thread.sleep(5000);
+        driver.findElement(By.xpath("//span[normalize-space()='Open Multiple']")).click();
 
-        // Calculate number of windows
+        Set<String> windowsHandles =  driver.getWindowHandles();
 
-        driver.findElement(By.id("j_idt88:j_idt91")).click();
+        System.out.println(windowsHandles.size());
 
-        Set<String> windows = driver.getWindowHandles();
-        System.out.println(windows.size());
-
-        Thread.sleep(5000);
-
-        // Close all the windows except parent window
-
-        driver.findElement(By.id("j_idt88:j_idt93")).click();
-        Set<String> windows2 = driver.getWindowHandles();
-
-        System.out.println(windows2.size());
-
-        for (String windowHandle : windows2) {
-            if (!(windowHandle.equals(parentWindow))) {
-                driver.switchTo().window(windowHandle);
+        for (String handle : windowsHandles) {
+            if (!handle.equals(parentWindow)) {
+                driver.switchTo().window(handle);
                 driver.close();
             }
         }
 
-        Thread.sleep(5000);
-
-        driver.quit();
 
     }
 }
