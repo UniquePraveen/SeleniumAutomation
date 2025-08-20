@@ -2,6 +2,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -22,18 +23,19 @@ public class Screenshot {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.leafground.com/alert.xhtml ");
+        driver.get("https://www.google.com");
     }
 
     @Test
     public void takeScreenshot() throws IOException, AWTException, InterruptedException {
 
         // Take screenshot Interface and type-casting used for get screenshot.
-        TakesScreenshot ts = (TakesScreenshot) driver;
-        File source = ts.getScreenshotAs(OutputType.FILE);
-        File destination = new File("//Users//praveen//Documents//IntelliJ//Selenium_Automation//Screenshots//Screenshot_6.png");
-        FileUtils.copyFile(source, destination);
-
+//        TakesScreenshot ts = (TakesScreenshot) driver;
+//        File source = ts.getScreenshotAs(OutputType.FILE);
+//        File destination = new File("//Users//praveen//Documents//IntelliJ//Selenium_Automation//Screenshots//Screenshot_6.png");
+//        FileUtils.copyFile(source, destination);
+        //   Way -02
+        // FileHandler.copy(source, destination);
 
 
 //        // Method 1 - Take Full Screen Screenshot
@@ -62,9 +64,25 @@ public class Screenshot {
 //        File outputfile = new File("//Users//admin//IdeaProjects//SeleniumAutomation//Screenshots//Screenshot_3.png");
 //        ImageIO.write(image, "png", outputfile);
 
-        Thread.sleep(4000);
-        driver.quit();
+        WebElement googleBanner =  driver.findElement(By.xpath("//*[@class = 'lnXdpd']"));
+       // TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = googleBanner.getScreenshotAs(OutputType.FILE);
+        File dest = new File("//Users//praveen//Documents//IntelliJ//Selenium_Automation//Screenshots//GoogleBanner.png");
+        FileUtils.copyFile(source, dest);
+
+       // Toolkit.getDefaultToolkit().getScreenSize();
 
 
+
+
+
+
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
