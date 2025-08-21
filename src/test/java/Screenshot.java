@@ -72,9 +72,9 @@ public class Screenshot {
 
        Robot robot = new  Robot();
        Dimension Screensize = Toolkit.getDefaultToolkit().getScreenSize();
-        Rectangle rectangle = new Rectangle(Screensize);
-        BufferedImage Screen =  robot.createScreenCapture(rectangle);
-        File Dest = new File(System.getProperty("user.dir")+"//Screenshots//EntireScreenshot.png");
+       Rectangle rectangle = new Rectangle(Screensize);
+       BufferedImage Screen =  robot.createScreenCapture(rectangle);
+       File Dest = new File(System.getProperty("user.dir")+"//Screenshots//EntireScreenshot.png");
         ImageIO.write(Screen, "png", Dest);
 
 
