@@ -1,9 +1,13 @@
+import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+import java.util.Iterator;
 import java.util.Set;
 
 public class WindowsHandling {
@@ -16,6 +20,7 @@ public class WindowsHandling {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.leafground.com/window.xhtml");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @Test
@@ -74,34 +79,77 @@ public class WindowsHandling {
 //
 //        driver.quit();
 
-        String parentWindow = driver.getWindowHandle();
-        System.out.println(parentWindow);
+//        String parentWindow = driver.getWindowHandle();
+//        System.out.println(parentWindow);
+//
+//        driver.findElement(By.xpath("//span[normalize-space()='Open']")).click();
+//
+//        Thread.sleep(5000);
+//
+//        String childWindow = driver.getWindowHandle();
+//        System.out.println(childWindow);
+//
+//
+//
+//        driver.switchTo().window(parentWindow);
+//
+//
+//        driver.findElement(By.xpath("//span[normalize-space()='Open Multiple']")).click();
+//
+//        Set<String> windowsHandles =  driver.getWindowHandles();
+//
+//        System.out.println(windowsHandles.size());
+//
+//        for (String handle : windowsHandles) {
+//            if (!handle.equals(parentWindow)) {
+//                driver.switchTo().window(handle);
+//                driver.close();
+//            }
+//        }
 
-        driver.findElement(By.xpath("//span[normalize-space()='Open']")).click();
+        String childWindowHandler;
 
-        Thread.sleep(5000);
+        String ParentHandler = driver.getWindowHandle();
+        System.out.println(ParentHandler);
 
-        String childWindow = driver.getWindowHandle();
-        System.out.println(childWindow);
+        driver.findElement(By.id("j_idt88:new")).click();
+
+        Set<String> Handles = driver.getWindowHandles();
+
+        Iterator<String> iterator =  Handles.iterator();
+
+        iterator.next();
 
 
 
-        driver.switchTo().window(parentWindow);
+        System.out.println(Handles);
+
+//        for (String handle : Handles) {
+//            if (!handle.equals(ParentHandler)) {
+//                childWindowHandler = handle;
+//                driver.switchTo().window(childWindowHandler);
+//
+//
+//            }
+//
+//        }
 
 
-        driver.findElement(By.xpath("//span[normalize-space()='Open Multiple']")).click();
 
-        Set<String> windowsHandles =  driver.getWindowHandles();
+      driver.switchTo().window(ParentHandler);
 
-        System.out.println(windowsHandles.size());
 
-        for (String handle : windowsHandles) {
-            if (!handle.equals(parentWindow)) {
-                driver.switchTo().window(handle);
-                driver.close();
-            }
+
+
+
+        Thread.sleep(2000);
+
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            //  driver.quit();
         }
-
-
     }
 }

@@ -21,7 +21,7 @@ public class UploadDownloadFunctions {
     public void getURL() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-//        driver.get("https://www.leafground.com/file.xhtml");
+        driver.get("https://www.ilovepdf.com/pdf_to_word");
     }
 
 
@@ -64,7 +64,7 @@ public class UploadDownloadFunctions {
     public void uploadFileUsingJSExecutor() {
 
         // Navigate to real website with hidden input
-        driver.get("https://www.ilovepdf.com/pdf_to_word");
+    //    driver.get("https://www.ilovepdf.com/pdf_to_word");
 
         // Step 1: Locate hidden input element
         WebElement fileInput = driver.findElement(By.xpath("//input[@type=\"file\"]"));
@@ -83,10 +83,10 @@ public class UploadDownloadFunctions {
 
     }
 
-//    @AfterMethod
-//    public void tearDown() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }

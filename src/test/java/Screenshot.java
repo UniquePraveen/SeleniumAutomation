@@ -67,10 +67,16 @@ public class Screenshot {
         WebElement googleBanner =  driver.findElement(By.xpath("//*[@class = 'lnXdpd']"));
        // TakesScreenshot ts = (TakesScreenshot) driver;
         File source = googleBanner.getScreenshotAs(OutputType.FILE);
-        File dest = new File("//Users//praveen//Documents//IntelliJ//Selenium_Automation//Screenshots//GoogleBanner.png");
-        FileUtils.copyFile(source, dest);
+        File dest = new File( System.getProperty("user.dir")+ "//Screenshots//GoogleBanner.png");
+        FileHandler.copy(source, dest);
 
-       // Toolkit.getDefaultToolkit().getScreenSize();
+       Robot robot = new  Robot();
+       Dimension Screensize = Toolkit.getDefaultToolkit().getScreenSize();
+        Rectangle rectangle = new Rectangle(Screensize);
+        BufferedImage Screen =  robot.createScreenCapture(rectangle);
+        File Dest = new File(System.getProperty("user.dir")+"//Screenshots//EntireScreenshot.png");
+        ImageIO.write(Screen, "png", Dest);
+
 
 
 
