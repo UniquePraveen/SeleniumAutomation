@@ -12,4 +12,10 @@ public class Parameter_1 {
 
         System.out.println("Summation Value is: " + (a + b));
     }
+
+    @Test
+    @Parameters({"a", "b"})
+    public void addSubstitute(@Optional("30") int a, @Optional("10") int b) {
+        System.out.println("Substitute Value is: " + (a - b));
+    }
 }

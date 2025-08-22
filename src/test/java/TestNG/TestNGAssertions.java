@@ -88,7 +88,6 @@ public class TestNGAssertions {
         System.out.println("Before Assertion");
         SF.assertFalse(actualName.isBlank(), "This is a false statement");
         System.out.println("After Assertion");
-
     }
 
 

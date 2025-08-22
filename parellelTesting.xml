@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="parellelTesting" parent-module="classes" thread-count="10">
-    <test name="Parelleltesting">
+<!--&lt;!&ndash;<suite name="parellelTesting" parent-module="classes" thread-count="10">&ndash;&gt;-->
+<!--&lt;!&ndash;    <test name="Parelleltesting">&ndash;&gt;-->
+<!--&lt;!&ndash;        <classes>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="TextBoxHandling"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="DynamicDropDownHandling"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="GoogleTest"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        </classes>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </test>&ndash;&gt;-->
+<!--</suite>-->
+
+<suite name="ParallelTetsing">
+    <test name = "ParellelTesing" thread-count="3">
         <classes>
             <class name="TextBoxHandling"/>
             <class name="DynamicDropDownHandling"/>
             <class name="GoogleTest"/>
         </classes>
-
     </test>
 </suite>
+
+

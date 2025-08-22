@@ -6,27 +6,28 @@ public class TestGrouping {
 
     // S - Smoke Testing            // R  - Regression Testing
 
-    @Test(groups = {"S", "R"})
+
+    @Test(groups = {"R", "S"}, priority = -1)
     public void test1() {
-        System.out.println("This is a smoke and regression test case");
+        System.out.println("This is a smoke and regression test case!");
     }
 
-    @Test(groups = {"R"}, enabled = false)
+    @Test(groups = {"R"})
     public void test2() {
         System.out.println("This ia a regression test case");
     }
 
-    @Test(groups = {"R"})
+    @Test
     public void test3() {
         System.out.println("This is not a regression or smoke test case");
     }
 
-    @Test(groups = {"S"})
+    @Test(priority = -1, groups = {"S"})
     public void test4() {
-        System.out.println("This is a smoke test case");
+        System.out.println("This is a smoke test case!");
     }
 
-    @Test(groups = {"S"})
+    @Test(groups = {"R", "S"})
     public void test5() {
         System.out.println("This is a regression and smoke test case");
     }

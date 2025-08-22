@@ -22,8 +22,10 @@
 
     <test name="Parameter_3">
 <!--       <parameter name="Browser" value="Edge"/>-->
+        <parameter name ="a" value ="50"/>
+        <parameter name="b" value="40"/>
         <classes>
-            <class name="TestNG.Parameters.Parameter_3"/>
+            <class name="TestNG.Parameters.Parameter_1"/>
         </classes>
     </test>
 </suite>

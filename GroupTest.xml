@@ -3,13 +3,14 @@
 <suite name="GroupTest_Suite">
     <test name="Group_Test_Cases" verbose="2">
 
-<!--        verbose = how much detail you want in the output log -->
-<!--        thread-count = how many threads to run tests simultaneously-->
+        <!--        verbose = how much detail you want in the output log -->
+        <!--        thread-count = how many threads to run tests simultaneously-->
 
         <groups>
             <run>
-<!--                <exclude name="R"/>-->
                 <include name="S"/>
+                <!--            <exclude name="R"/>-->
+
             </run>
         </groups>
         <classes>
